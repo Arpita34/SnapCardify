@@ -13,11 +13,11 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get(
   '/google/callback',
-  passport.authenticate('google', { failureRedirect: `${process.env.FRONTEND_URL}/login?error=oauth_failed`, session: false }),
+  passport.authenticate('google', { session: false }),
   (req: any, res) => {
     const { token } = req.user;
-    // Redirect to frontend with token as query param
-    res.redirect(`${process.env.FRONTEND_URL}/auth/callback?token=${token}`);
+    const frontendUrl = process.env.FRONTEND_URL || 'https://snap-cardify.vercel.app';
+    res.redirect(`${frontendUrl}/auth/callback?token=${token}`);
   }
 );
 

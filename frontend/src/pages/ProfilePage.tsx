@@ -6,7 +6,7 @@ import { useAuthStore } from '../store/useAuthStore';
 
 export default function ProfilePage() {
   const navigate = useNavigate();
-  const { user, updateUser, logout } = useAuthStore();
+  const { user, updateUser } = useAuthStore();
 
   const [name, setName] = useState(user?.name || '');
   const [saving, setSaving] = useState(false);

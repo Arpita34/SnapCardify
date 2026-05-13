@@ -21,6 +21,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 
+app.get('/', (req, res) => {
+  res.send('SnapCardify API is up and running! 🚀');
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'Server is running normally' });
 });

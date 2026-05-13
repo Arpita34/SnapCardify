@@ -132,9 +132,3 @@ SnapCardify/
 │
 └── README.md
 ```
-
-## 🐛 Known Limitations
-- **Canvas Tainting (CORS):** If external images are loaded onto the HTML5 Canvas without proper Cross-Origin Resource Sharing (CORS) headers, the canvas cannot be exported (downloaded/copied). Ensure your image hosting providers (like Cloudinary) have CORS enabled for your domain.
-
----
-*Built as a comprehensive MERN stack demonstration project.*
